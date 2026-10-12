@@ -22,6 +22,15 @@ class CalculatorTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             calculator.divide(10, 0)
 
+    def test_subtract_result_can_be_negative(self):
+        self.assertEqual(calculator.subtract(3, 5), -2)
+
+    def test_multiply_negative_number(self):
+        self.assertEqual(calculator.multiply(-4, 3), -12)
+
+    def test_divide_fractional_result(self):
+        self.assertEqual(calculator.divide(1, 2), 0.5)
+
 
 if __name__ == "__main__":
     unittest.main()
